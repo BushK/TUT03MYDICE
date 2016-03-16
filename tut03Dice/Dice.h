@@ -11,7 +11,8 @@ public:
 	float average(Dice, int);
 	float average(int[], int);
 	~Dice();
-P
+
+
+private:
 
 };
-
