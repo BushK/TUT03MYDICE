@@ -1,19 +1,46 @@
-#include "Dice.h"  
+#include "Dice.h"
 #include<iostream>
-
-
 using namespace std;
 
-int main()
+Dice::Dice()
 {
-	int noOfRolls;
-	float averageRolls;
-	int throwsArray[5] = {};
-	Dice MyDice, ArrayDice;
+
+}
 
 
-	cout << "Please enter the number of rolls" << endl;
-	cin >> noOfRolls;
-	averageRolls = MyDice.average(ArrayDice, noOfRolls);
-	cout << "The average of all throws is:" << averageRolls << endl;
-	cout << endl;
+int Dice::roll()
+{
+	int Random_;
+	Random_ = (rand() % 6) + 1;
+	return Random_;
+}
+
+float Dice::average(Dice Die, int RNum)
+{
+	int R = 0;  //holds randomly generated numbers
+	for (int i = 0; i < RNum; ++i)
+	{
+		R += Die.roll();
+	}
+
+	return R / RNum;
+
+}
+
+float Dice::average(int Rolls[], int RNum)
+{
+	int R = 0;
+
+	for (int i = 0; i < RNum; ++i)
+	{
+		Rolls[i] = roll();
+		R += Rolls[i];
+	}
+
+	return R / RNum;
+
+}
+
+Dice::~Dice()
+{
+}
