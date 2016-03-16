@@ -15,3 +15,5 @@ int main()
 	cout << "Please enter the number of rolls" << endl;
 	cin >> noOfRolls;
 	averageRolls = MyDice.average(ArrayDice, noOfRolls);
+	cout << "The average of all throws is:" << averageRolls << endl;
+	cout << endl;
